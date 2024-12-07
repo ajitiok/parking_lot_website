@@ -1,18 +1,31 @@
 import type { Config } from "tailwindcss";
 
 export default {
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
+    screens: {
+      sm: "480px",
+      md: "768px",
+      lg: "976px",
+      xl: "1440px",
+      "2xl": "1540px",
+    },
+    fontFamily: {
+      rubik: ["Rubik", "sans-serif"],
+    },
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        primary: {
+          1: "#252626",
+          2: "#5d6974",
+          3: "#f8d73a",
+          4: "#f6fbff",
+          5: "#F5F6F8",
+        },
       },
     },
   },
-  plugins: [],
+  variants: {
+    scrollbar: ["rounded"],
+  },
 } satisfies Config;
